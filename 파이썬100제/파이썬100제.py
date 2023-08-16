@@ -1,122 +1,13 @@
 # -*- coding: utf-8 -*-
 
-# 1번
 
-nums = [100, 200, 300, 400, 500]
+# 10번
 
-# 정답1
-nums.pop()
-nums.pop()
+def solution(n):
+    for i in range(1, n + 1):
+        print((' ' * (n-i)) + ((2 * i) - 1)*'*')
 
-# 정답2
-nums[:3]
-
-nums = [100, 200, 300, 400, 500]
-nums[-5:-2]
-
-# 2번
-
-l = [200, 100, 300]
-l.insert(2, 10000)
-print(l)
-
-# l[:2] + [10000] + l[-1] #error
-l[:2] + [10000] + [l[-1]]
-
-# 5번
-
-a = 10
-b = 2
-for i in range(1, 5, 2):
-    a += i
-
-print(a + b)
-
-"""# 6번"""
-
-# 다음중 True인 것은? 2번
-# 1)  None
-# 2)  1
-# 3)  ""
-# 4)  0
-# 5)  bool(0)
-
-bool([]) # False
-bool([1, 2, 3]) # True
-
-# l의 값이 변한 적이 있다? 없다. 그런데 왜 bool 값은 변했을까?
-l = []
-print(id(l))
-print(bool(l))
-
-l.append(10)
-l
-print(id(l))
-print(bool(l))
-
-# Python은 지극히 인간의 입장에서 출력을 고려한 것입니다.
-
-l = '' #immutable
-print(id(l))
-print(bool(l))
-
-l = 'a'
-print(id(l))
-print(bool(l))
-
-"""#7번"""
-
-# 언더바 변수에 대하여
-# 반복문 등에서 사용하지 않는 변수에 _를 넣습니다.
-for _ in range(5):
-    print('hello')
-
-# 프라이빗한 변수에서 _를 사용합니다.
-class Human():
-    _age = 0
-
-"""# 8번"""
-
-d = {'height':180,
-     'weight':78,
-     'weight':84,
-     'temparture':36,
-     'eyesight':1}
-print(d['weight'])
-
-"""# 9번"""
-
-year = '2019'
-month = '04'
-day = '26'
-hour = '11'
-minute = '34'
-second = '27'
-
-print(year, month, day, sep='/', end=' ')
-print(hour, minute, second, sep=':')
-
-"""# 10번"""
-
-#     *
-#    ***
-#   *****
-#  *******
-# *********
-
-n = 5
-for i in range(1, n+1):
-    print(i)
-
-n = 5
-for i in range(1, n + 1):
-    print(((n - i) * ' ') + '*')
-
-n = 5
-for i in range(1, n + 1):
-    print(((n - i) * ' ') + (((2 * i) - 1)) * '*')
-
-"""# 11번"""
+# 11번
 
 s = 0
 for i in range(1, 101):
