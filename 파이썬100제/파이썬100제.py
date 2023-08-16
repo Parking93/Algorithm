@@ -53,48 +53,23 @@ def reverse(s): # 정답5
         return reverse(s[1:]) + s[0]
 reverse('안녕하세요')
 
-"""# 17번"""
+# 17번
 
-height = 150
+def solution(height): # 정답1
+    if height >= 150:
+        return 'YES'
+    else:
+        return 'NO'
 
-if height >= 150: print('YES')
-
-height = 149
-
-# print('NO') if height >= 150: print('YES') # Error
-print('YES') if height >= 150 else print('NO')
-
-def solution(height):
+def solution(height): # 정답2
     return 'YES' if height >= 150 else 'NO'
 
-solution(150)
+# 18번
 
-"""# 18번"""
+user_input = input() # '20 30 40'
+score_list = list(map(int, user_input.split(' ')))
+int(sum(score_list)/len(score_list))
 
-list(map(int, '20 30 40'.split(' ')))
-
-sum(map(int, '20 30 40'.split(' '))) / 3
-
-"""# 21번"""
-
-# 1)  x = {1, 2, 3, 5, 6, 7}
-# 2)  x = {} # dict
-# 3)  x = set('python')
-# 4)  x = set(range(5))
-# 5)  x = set()
-
-t = 1
-t = (1) # tuple 아님!
-t = (1,)
-t
-
-# 어떤 라이브러리나 프레임웤 마지막 콤마가 꼭 있는 이유(3 ~ 4개 있습니다.)
-# 버전관리하는 곳에서 콤마를 버전의 업이라고 인식하는 경우가 있습니다.
-# Ctrl + C, V
-# 튜플인경우 상수, 문자가 들어갔을 때 튜플이 아닌 int, str로 변환되는 것을 막기 위해
-옵션 = (
-    'a',
-)
 
 """# 24번"""
 
