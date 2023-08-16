@@ -31,27 +31,26 @@ jik.attack()
 
 # 16번
 
-'안녕하세요'[::-1]
+'안녕하세요'[::-1] # 정답1
 
-''.join(list(reversed(list('안녕하세요'))))
+''.join(list(reversed(list('안녕하세요')))) # 정답2
 
-s = '안녕하세요'
+s = '안녕하세요' # 정답3
 ss = list(s)
 ss.reverse()
 ''.join(ss)
 
-s = '안녕하세요'
+s = '안녕하세요' # 정답4
 result = ''
 for i in s:
     result = i + result
 result
 
-def reverse(s):
+def reverse(s): # 정답5
     if len(s) == 1:
         return s
     else:
         return reverse(s[1:]) + s[0]
-
 reverse('안녕하세요')
 
 """# 17번"""
