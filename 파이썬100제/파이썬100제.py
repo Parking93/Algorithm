@@ -30,7 +30,6 @@ print(jik.health, jik.mana, jik.armor)
 jik.attack()
 
 # 16번
-
 '안녕하세요'[::-1] # 정답1
 
 ''.join(list(reversed(list('안녕하세요')))) # 정답2
@@ -54,7 +53,6 @@ def reverse(s): # 정답5
 reverse('안녕하세요')
 
 # 17번
-
 def solution(height): # 정답1
     if height >= 150:
         return 'YES'
@@ -65,78 +63,37 @@ def solution(height): # 정답2
     return 'YES' if height >= 150 else 'NO'
 
 # 18번
-
 user_input = input() # '20 30 40'
 score_list = list(map(int, user_input.split(' ')))
 int(sum(score_list)/len(score_list))
 
+# 24번
+def solution(s):
+    return s.upper()
+    
+# 26번 
+def solution(s):
+    key = '수성, 금성, 지구, 화성, 목성, 토성, 천왕성, 해왕성'.split(', ')
+    value = 'Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune'.split(', ')
+    return dict(zip(key, value))[s]
 
-"""# 24번"""
-
-'mary'.upper()
-
-ord('a')
-
-ord('A')
-
-ord('a') - ord('A')
-
-ord('a') - 32
-
-chr(ord('a') - 32)
-
-for i in 'mary':
-    print(chr(ord(i) - 32), end='') # 완벽한 코드는 아니고, 소문자인 것을 판단하는 if가 위에 있어야 합니다.
-
-# 도대체 이런 지식은 어디에 쓸모가 있을까요? 인코딩쪽에서 어떤 인코딩인지 확인하는 용도로 사용하기도 합니다.
-# 알고리즘은 얼마나 쓸모가 있나요? 코드를 읽는 속도와 이해하는 속도에 도움을 줍니다.
-# => 코드는 AI가 더 잘짭니다.ㅎㅎ 잘 짠것을 확인해주는 작업은 내가 해야 합니다.
-
-"""# 26번 문제"""
-
-key = '수성, 금성, 지구, 화성, 목성, 토성, 천왕성, 해왕성'.split(', ')
-value = 'Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune'.split(', ')
-
-dict(zip(key, value))
-
-"""# 28번"""
-
-s = 'python'
-for i in range(len(s)-1): # 아래 zip에서는 -1을 고려하지 않아도 됩니다.
-    print(s[i:i+2])
-
-s = 'python'
-list(zip(s, s[1:])) # 짝이 안맞으면 어차피 생성하지 않습니다.
-
-s = 'python'
+# 28번 
+s = 'Python' # 정답1
+for i in range(len(s)-1):
+    print(s[i]+s[i+1])
+    
+s = 'Python' # 정답2
 for i in zip(s, s[1:]):
     print(''.join(i))
 
-s = 'life is short, you need python'
-for i in range(len(s)-2): # zip에서는 -2을 고려하지 않아도 됩니다.
-    print(s[i:i+3])
 
-p = [1, 3, 5, 7, 11, 14, 19, 21, 22]
-list(zip(p, p[1:]))
-list(map(lambda x:x[1]-x[0], zip(p, p[1:])))
-
-"""# 29번
-* 문제 변경: 대문자만 지나가도록 코딩해주세요. 'HellO WoRld' -> HOR
-"""
-
+# 29번
+# 문제 변경: 대문자만 지나가도록 코딩해주세요. 'HellO WoRld' -> HOR
 for s in 'HellO WoRld':
-    if s != s.lower():
+    if s.isupper(): 
         print(s)
 
-for s in 'HellO WoRld':
-    if 'A' <= s <= 'Z':
-        print(s)
-
-for s in 'HellO WoRld':
-    if s.isupper(): # 서영님께서 말씀해주신 코드가 가장 좋은 코드라고 생각합니다.
-        print(s)
-
-"""# 30번"""
+# 30번
 
 'pineapple is yummy apple'.find('apple') # 없는 것을 찾을 때 -1
 'pineapple is yummy apple'.index('xpple') # 없는 것을 찾을 때 error <- error가 나면 서비스 멈춥니다!
