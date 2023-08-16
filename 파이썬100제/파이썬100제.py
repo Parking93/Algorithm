@@ -2,20 +2,17 @@
 
 
 # 10번
-
 def solution(n):
     for i in range(1, n + 1):
         print((' ' * (n-i)) + ((2 * i) - 1)*'*')
 
 # 11번
-
 s = 0
 for i in range(1, 101):
     s += i
 print(s)
 
-"""# 12번"""
-
+# 12번
 class Wizard:
     def __init__(self, health, mana, armor):
         '''
@@ -28,12 +25,11 @@ class Wizard:
     def attack(self):
         print('파이어볼')
 
-
 jik = Wizard(health = 545, mana = 210, armor = 10)
 print(jik.health, jik.mana, jik.armor)
 jik.attack()
 
-"""# 14번
+# 14번
 문제가 너무 쉬워 아래 문제로 풀도록 하겠습니다.
 
 * 링크 : https://school.programmers.co.kr/learn/courses/30/lessons/120871?language=javascript
