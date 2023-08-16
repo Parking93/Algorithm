@@ -29,25 +29,7 @@ jik = Wizard(health = 545, mana = 210, armor = 10)
 print(jik.health, jik.mana, jik.armor)
 jik.attack()
 
-# 14번
-문제가 너무 쉬워 아래 문제로 풀도록 하겠습니다.
-
-* 링크 : https://school.programmers.co.kr/learn/courses/30/lessons/120871?language=javascript
-"""
-
-# 이러한 조건 문제에서 문제가 쉽게 풀리지 않을 경우
-# 소거법을 사용하시는 방법으로 푸시면 좀 더 쉽게 풀 수도 있습니다.
-
-[i for i in range(100) if i % 3 != 0] # 3의 배수 제거!
-[i for i in range(100) if '3' not in str(i)] # 3이 들어가 있는 숫자 제거!
-
-[i for i in range(100) if i % 3 != 0 and '3' not in str(i)][9-1]
-[i for i in range(100) if i % 3 != 0 and '3' not in str(i)][10-1]
-
-solution = lambda n:[i for i in range(10000) if i % 3 != 0 and '3' not in str(i)][n-1]
-solution(9)
-
-"""# 16번"""
+# 16번
 
 '안녕하세요'[::-1]
 
