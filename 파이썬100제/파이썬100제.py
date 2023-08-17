@@ -108,9 +108,9 @@ for s in 'HellO WoRld':
 'pineapple is yummy apple'.find('apple', 10)
 'pineapple is yummy apple'.index('apple', 10)
 
-"""# 31번
+# 31번
 
-"""
+
 
 # https://wayhome25.github.io/python/2017/06/14/time-complexity/
 # 1)  l[i]
