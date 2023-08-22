@@ -94,43 +94,11 @@ for s in 'HellO WoRld':
         print(s)
 
 # 30번
-
-'pineapple is yummy apple'.find('apple') # 없는 것을 찾을 때 -1
-'pineapple is yummy apple'.index('xpple') # 없는 것을 찾을 때 error <- error가 나면 서비스 멈춥니다!
-# 예를 들어 주기적으로 크롤링하는 코드가 있다면
-# find를 쓰셔서 error가 안나고 다음 코드로 넘어가게 코딩하실 수 있습니다.
-# 예외처리를 하는 것이 가장 좋습니다.
-# 정답: 목적에 맞게 사용하셔야 합니다.
-
-'pineapple is yummy apple'.rfind('apple')
-'pineapple is yummy apple'.rindex('apple')
-
-'pineapple is yummy apple'.find('apple', 10)
-'pineapple is yummy apple'.index('apple', 10)
-
-# 31번
-
-
-
-# https://wayhome25.github.io/python/2017/06/14/time-complexity/
-# 1)  l[i]
-# 2)  l.append(5)
-# 3)  l[a:b] # 정답
-# 4)  l.pop()
-# 5)  l.clear()
-
-# 그럼에도 불구하고 슬라이싱을 사용해야 할 경우
-# error를 발생시키지 않기 때문에
-
-l = [1, 2, 3, 4, 5]
-
-# l[10]  # out of range error!
-l[10:11] # out of range error가 안남! 그런데 기능은 같음!
+def sol(s1, s2):
+    return s1.find(s2)
+sol('pineapple is yummy','apple')
 
 # 35번
-
-# 매우매우 중요한 내용
-
 def one(n):
     def two(value):
         return value ** n
@@ -143,316 +111,56 @@ print(a(10))
 print(b(10))
 print(c(10))
 
-# 객체지향 프로그래밍 예제
-class Book:
-    def __init__(self, title, content, author, pub_date):
-        self.title = title
-        self.content = content
-        self.author = author
-        self.pub_date = pub_date
-
-    def calculate_date(self):
-         self.pub_date - self.current_date
-
-# 1. 함수를 변수에 할당할 수 있습니다.
-# 2. 함수를 데이터 구조에 저장할 수 있습니다.
-# 3. 함수를 인자로 다른 함수에 전달할 수 있습니다.
-# 4. 함수를 결과로서 반환할 수 있습니다.
-
-def add(x, y):
-    return x + y
-x = add
-x(10, 20)
-
-id(x), id(add)
-
-def add():
-    return lambda x: x**2
-x = add()
-x(10)
-
-# 데코레이터
-def simple_decorator(function):
-    def wrapper():
-        print("Before the function call")
-        function()
-        print("After the function call")
-    return wrapper
-
-@simple_decorator
-def hello():
-    print("Hello, World!")
-
-hello() # 데코레이터가 없는 상태에서는 simple_decorator(hello)() 와 같습니다.
-
-# 데코레이터 활용 1
-def simple_decorator(function):
-    def wrapper(l):
-        print("Before the function call")
-        print(function(map(int, l)))
-        print("After the function call")
-    return wrapper
-
-@simple_decorator
-def 합(l):
-    return sum(l)
-
-합([1, 2, 3, '4'])
-
-# 데코레이터 활용 2
-def debug(function):
-    def new_function(*args):
-        print(f'{function.__name__} 함수 시작')
-        print(*args)
-        result = function(*args)
-        print(f'{function.__name__} 함수 끝')
-        # return result # return 값이 있는 데코레이터는 바로 뒤에서 진행합니다.
-
-    return new_function
-
-
-@debug
-def sum_1_to_n(n):
-    return n * (n + 1) / 2
-
-
-result = sum_1_to_n(30)
-
-print(result)
-
-# *agrs: 변수가 여러개와도 받음
-def test(*args):
-    for i in args:
-        print(i)
-
-test(1, 2, 3, 4, 5, 'hello world')
-
-# **kagrs: 키워드 아규먼츠
-
-def test(**kargs):
-    print(kargs)
-    for i in kargs:
-        print(i)
-
-test(one=1, two=2)
-
-# 데코레이터 활용 3
-def decorator1(function):
-    def new_function(*args, **kwargs):
-        print('첫번째 데코레이터 시작')
-        result = function(*args, **kwargs)
-        print('첫번째 데코레이터 끝')
-        return result
-
-    return new_function
-
-
-def decorator2(function):
-    def new_function(*args, **kwargs):
-        print('두번째 데코레이터 시작')
-        result = function(*args, **kwargs)
-        print('두번째 데코레이터 끝')
-        return result
-
-    return new_function
-
-
-def decorator3(function):
-    def new_function(*args, **kwargs):
-        print('세번째 데코레이터 시작')
-        result = function(*args, **kwargs)
-        print('세번째 데코레이터 끝')
-        return result
-
-    return new_function
-
-@decorator1
-@decorator2
-@decorator3
-def sum_1_to_n(n):
-    return n * (n + 1) / 2
-
-result = sum_1_to_n(30)
-
-print(f'result: {result}')
-
-# 동적 데코레이터
-def add(n):
-    def decorator(function):
-        def new_function(*args, **kwargs):
-            result = function(*args, **kwargs)
-            return result + n
-        return new_function
-    return decorator
-
-@add(10)
-def plus(a, b):
-    return a + b
-
-result = plus(10, 20)
-print(f'result : {result}')
-
-
-
-
-
-
-
 # 36번
+def sol(n):
+    answer = ''
+    for i in range(1, 10):
+        print(n*i, end= ' ')
+sol(2)
 
-# 1~9까지의 숫자 중 하나를 입력하면 그 단의 구구단 결과를 한 줄에 출력하는 프로그램을 작성하세요.
 
+# 37번
+vote = '원범 원범 혜원 혜원 혜원 혜원 유진 유진'
+vote_list = vote.split(' ')
+vote_list.count(max(vote_list))
+print(f'{max(vote_list)}(이)가 총 {vote_list.count(max(vote_list))}표로 반장이 되었습니다.')
 
-
-"""# 37번
-* 문제 변경
-
-"""
-
-# 1부터 10000까지 8이라는 숫자를 count하라!
-# count를 할 수 있는 자료형으로 만드는 것이 핵심!
-# 순회를 돌면서 count는 위 답안이 안풀렸을 때 대안 정도 가능함.
-str(list(range(10000))).count('8')
-
-"""# 38번
-```
-점수입력 : 97 86 75 66 55 97 85 97 97 95
-
-출력 : 6
-```
-"""
-
-sorted(map(int, '97 86 75 66 55 97 85 97 97 95'.split(' ')), reverse=True)
-# str -> list
-
-sorted(set(map(int, '97 86 75 66 55 97 85 97 97 95'.split(' '))), reverse=True)[3]
-# 3위 점수
+# 38번
+점수입력 = '97 86 75 66 55 97 85 97 97 95'
+sorted(set(map(int, 점수입력.split(' '))), reverse=True)[2] # 3위 점수
 
 count = 0
-for i in sorted(map(int, '97 86 75 66 55 97 85 97 97 95'.split(' ')), reverse=True):
-    if i == sorted(set(map(int, '97 86 75 66 55 97 85 97 97 95'.split(' '))), reverse=True)[3]:
-        break
-    else:
-        count += 1
-print(count)
+for i in map(int, 점수입력.split(' ')):
+    if i >= sorted(set(map(int, 점수입력.split(' '))), reverse=True)[2]:
+        count+=1
+count
 
-# 내 답
-점수 = '97 86 75 66 55 97 85 97 97 95'
-count=0
-점수2 = sorted(set(map(int, 점수.split(' '))), reverse=True)[3]
-for i in sorted(map(int, 점수.split(' ')), reverse=True):
-    if i == 점수2:
-        break
-    else:
-        count += 1
-print(count)
+# 39번
+input = input() # 정답1
+print(input.replace('q','e').replace('b','n'))
 
-# 강사님 답 (1자리 점수가 있을때 오류가 발생)
-def solution(s):
-    answer = 0
-    splitdata = map(int, s.split(' '))
-    for i in list(reversed(sorted(set(splitdata))))[:3]:
-        answer += s.count(str(i))
-    return answer
-
-solution('97 86 75 66 55 97 85 97 97 95')
-
-def solution(s):
-    answer = 0
-    splitdata = list(map(int, s.split(' ')))
-    for i in list(reversed(sorted(set(splitdata))))[:3]:
-        for j in list(splitdata):
-            if i == j:
-                answer += 1
-    return answer
-
-solution('97 86 75 66 55 97 85 97 97 95')
-
-# map으로 된 데이터가 왜 한 번만 순회가 되었는지
-# https://www.notion.so/paullabworkspace/python-zip-b7a1992be7884891a5f1d0a5c0c2df9c?pvs=4
-
-def solution(s):
-    answer = 0
-    splitdata = map(int, s.split(' '))
-    for i in list(reversed(sorted(set(splitdata))))[:3]:
-        print(list(splitdata))
-        for j in list(splitdata):
-            if i == j:
-                answer += 1
-    return answer
-
-solution('97 86 75 66 55 97 85 97 97 95')
-
-import collections
-
-collections.Counter('97 86 75 66 55 97 85 97 97 95'.split(' '))
-
-"""# 39번
-
-```
-입력 : querty
-출력 : euerty
-
-입력 : hqllo my bamq is hyqwob
-출력 : hello my bame is hyewob
-```
-"""
-
-'qurety'.replace('q', 'e').replace('b', 'n')
-
-import re
+import re # 정답2
 def solution(s):
     return re.sub('e', 'q',re.sub('q', 'e', s))
 solution('hqllo my bamq is hyqwob')
 
+import re # 정답3 
 re.sub(r'[qb]', lambda x: 'e' if x.group() == 'q' else 'n', s)
 
-"""# 41번
-- 1과 자기 자신만을 약수로 가지는 수
+# 41번
+def sol(n):
+    if n == 1:
+        return 'NO'
+    elif n == 2:
+        return 'YES'
+    for i in range(2, n):
+        if n % i == 0:
+            return 'NO'
+            break
+        else:
+            return 'YES'
 
-"""
-
-for i in range(2, 997):
-    if 997 % i == 0:
-        print('소수가 아닙니다!')
-        break
-
-def prime_list(n):
-    # 에라토스테네스의 체 초기화: n개 요소에 True 설정(소수로 간주)
-    sieve = [True] * n
-
-    # n의 최대 약수가 sqrt(n) 이하이므로 i=sqrt(n)까지 검사
-    m = int(n ** 0.5)
-    for i in range(2, m + 1):
-        if sieve[i] == True:           # i가 소수인 경우
-            for j in range(i+i, n, i): # i이후 i의 배수들을 False 판정
-                sieve[j] = False
-
-    # 소수 목록 산출
-    return [i for i in range(2, n) if sieve[i] == True]
-prime_list(100)
-
-def prime_list(n):
-    # 에라토스테네스의 체 초기화: n개 요소에 True 설정(소수로 간주)
-    sieve = [True] * n
-
-    # n의 최대 약수가 sqrt(n) 이하이므로 i=sqrt(n)까지 검사
-    m = int(n ** 0.5)
-    for i in range(2, m + 1):
-        if sieve[i] == True:           # i가 소수인 경우
-            for j in range(i+i, n, i): # i이후 i의 배수들을 False 판정
-                sieve[j] = False
-
-    print(sieve) # 0부터 시작해서 i가 소수인경우 True
-
-    # 소수 목록 산출
-    return [i for i in range(2, n) if sieve[i] == True]
-
-prime_list(100)
-
-
-
-"""# 43번"""
+# 43번
 
 # 음수 변환까지 하려면 좀 더 고려를 해야 합니다.
 x = 11
