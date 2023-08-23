@@ -161,41 +161,28 @@ def sol(n):
             return 'YES'
 
 # 43번
-
-# 음수 변환까지 하려면 좀 더 고려를 해야 합니다.
-x = 11
-s = ''
+x = 13
+answer = ''
 while x:
-    print(x)
-    s += str(x % 2)
+    answer += str(x % 2)
     x //= 2
-s[::-1]
+answer[::-1]
 
-#   2   | 11 ... 1
-#        ---
-#   2   |  5 ... 1
-#        ---
-#   2   |  2 ... 0
-#        ---
-#   2   |  1
+# 44번
+n = 18234 # 정답1
+sum(map(int, [i for i in str(n)]))
 
-"""# 44번
-
-"""
-
-# 예를들어
-# 18234 = 1+8+2+3+4 이고 정답은 18 입니다.
-# 3849 = 3+8+4+9 이고 정답은 24입니다.
-
-
-n = 1234
+n = 18234 # 정답2
 answer = 0
 for i in str(n):
     answer += int(i)
 answer
 
-"""# 45번"""
-
+# 45번
+import time
+t = time.time()
+t = int(t//(3600*24*365))+1970
+print(t)
 
 
 
