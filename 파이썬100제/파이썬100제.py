@@ -187,17 +187,20 @@ print(t)
 
 
 
-"""# 48번"""
-
-# 다시 확인 필요
+# 48번
 s = 'AAABBBcccddd'
 answer = ''
 for i in s:
-    if s.isupper():
+    if i.isupper():
         answer += i.lower()
-    else:
+    elif i.islower():
         answer += i.upper()
 answer
+
+# 49번
+n = '10 9 8 7 6 5 4 3 2 1'
+max(map(int,n.split(' ')))
+
 
 """# 53번
 괄호 문자열이란 괄호 기호인 '{', '}', '[', ']', '(', ')' 와 같은 것을 말한다. 그 중 괄호의 모양이 바르게 구성 된 문자열을 바른 문자열, 그렇지 않은 문자열을 바르지 않은 문자열이라 부르도록 하자.
