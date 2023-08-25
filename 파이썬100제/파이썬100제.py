@@ -252,20 +252,6 @@ print(len(원판의이동경로))
 
 # 56번
 
-데이터
-nationWidth = {
-     'korea': 220877,
-     'Rusia': 17098242,
-     'China': 9596961,
-     'France': 543965,
-     'Japan': 377915,
-     'England' : 242900 }
-
-출력
-England 22023
-```
-"""
-
 nationWidth = {
      'korea': 220877,
      'Rusia': 17098242,
