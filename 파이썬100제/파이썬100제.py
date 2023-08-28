@@ -267,8 +267,8 @@ for nation, value in nationWidth.items():
         gap = abs(a - value)
         answer = nation
 print(answer, value)
-
-nationWidth = {        # 정답2
+## 정답2
+nationWidth = {       
      'Rusia': 17098242,
      'China': 9596961,
      'France': 543965,
@@ -277,8 +277,8 @@ nationWidth = {        # 정답2
 def f(key):
     return [nationWidth[key] - 220877, key]
 min(map(f, nationWidth))
-
-nationWidth = {       # 정답3
+## 정답3
+nationWidth = {      
      'Rusia': 17098242,
      'China': 9596961,
      'France': 543965,
@@ -287,6 +287,12 @@ nationWidth = {       # 정답3
 min(map(lambda key: [nationWidth[key] - 220877, key], nationWidth))[1]
 
 # 57번
+## 정답1
+count = 0 
+for i in range(0, 1001):
+    count += str(i).count('1')
+count
+## 정답2
 str(list(range(0, 1001))).count('1')
 
 # 58번
