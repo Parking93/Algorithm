@@ -251,15 +251,13 @@ print(len(원판의이동경로))
 원판의이동경로
 
 # 56번
-
-nationWidth = {
+nationWidth = {      # 정답1
      'korea': 220877,
      'Rusia': 17098242,
      'China': 9596961,
      'France': 543965,
      'Japan': 377915,
      'England' : 242900 }
-
 a = nationWidth['korea']
 nationWidth.pop('korea')
 gap = float('inf')
@@ -268,27 +266,24 @@ for nation, value in nationWidth.items():
     if abs(a - value) < gap:
         gap = abs(a - value)
         answer = nation
+print(answer, value)
 
-print(answer, gap)
-
-nationWidth = {
+nationWidth = {        # 정답2
      'Rusia': 17098242,
      'China': 9596961,
      'France': 543965,
      'Japan': 377915,
      'England' : 242900 }
-
 def f(key):
     return [nationWidth[key] - 220877, key]
 min(map(f, nationWidth))
 
-nationWidth = {
+nationWidth = {       # 정답3
      'Rusia': 17098242,
      'China': 9596961,
      'France': 543965,
      'Japan': 377915,
      'England' : 242900 }
-
 min(map(lambda key: [nationWidth[key] - 220877, key], nationWidth))[1]
 
 # 57번
