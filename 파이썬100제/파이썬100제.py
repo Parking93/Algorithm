@@ -308,6 +308,7 @@ for num, name in enumerate(student):
     print(f'번호: {num+1}, 이름: {name}')
     
 # 61번
+## 정답1
 userinput = 'aaabbbcdddd'
 s = userinput[0]
 count = 0
@@ -321,6 +322,13 @@ for i in userinput:
         count = 1
         s = i
 answer += s + str(count)
+answer
+## 정답2
+import re
+s = 'aaabbbbcddddaaabbbbcdddd'
+answer =''
+for i in re.findall('(\\w)(\\1*)', s):
+    answer += i[0] + str(len(i[1])+1)
 answer
 
 """# 62번
