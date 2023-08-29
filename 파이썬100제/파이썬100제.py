@@ -308,53 +308,19 @@ for num, name in enumerate(student):
     print(f'번호: {num+1}, 이름: {name}')
     
 # 61번
-
-"""
-
-collections.Counter('aaabbbbcdddd').items()
-
-from collections import Counter
-answer =''
-for key, value in Counter('aaabbbbcdddd').items():
-    answer += key
-    answer += str(value)
-answer
-
-from collections import Counter
-s = "aaabbbbcdddd"
-"".join([str(i) + str(Counter(s)[i]) for i in Counter(s)])
-
-# 입력
-# aaabbbbcddddaaabbbbcdddd
-
-# 출력
-# a3b4c1d4a3b4c1d4
-
-s = 'aaabbbbcddddaaabbbbcdddd'
-answer = ''
+userinput = 'aaabbbcdddd'
+s = userinput[0]
 count = 0
-pre = s[0]
-for i in s:
-    # print(pre, i)
-    if pre == i:
+answer = ''
+for i in userinput:
+    if i == s:
         count += 1
     else:
-        answer += pre + str(count)
-        pre = i
+        answer += s
+        answer += str(count)
         count = 1
-
-answer += pre + str(count)
-
-answer
-
-re.findall('(\\w)(\\1*)', s)
-
-import re
-
-s = 'aaabbbbcddddaaabbbbcdddd'
-answer =''
-for i in re.findall('(\\w)(\\1*)', s):
-    answer += i[0] + str(len(i[1])+1)
+        s = i
+answer += s + str(count)
 answer
 
 """# 62번
