@@ -332,8 +332,6 @@ for i in re.findall('(\\w)(\\1*)', s):
 answer
 
 # 62번
-
-
 string='aacddddddddd'
 a=string.count('a') #2
 b=string.count('b') #0
@@ -342,16 +340,21 @@ d=string.count('d') #9
 print(int(str(a)+str(b)+str(c)+str(d)+str(b)+str(d)+str(a)+str(a+1)))
 
 # 63번
-
-
-user_input = '복잡한 세상 편하게 살자'.split(' ')
-#print(user_input)
-result = ''
-
-for s in user_input:
-    result += s[0]
-
-print(result)
+## 정답1
+s = '복잡한 세상 편하게 살자'
+answer = ''
+for i in range(len(s)):
+    if i == 0:
+        answer += s[i]
+    elif s[i-1] == ' ':
+        answer += s[i]
+answer
+## 정답2
+s = '복잡한 세상 편하게 살자'.split(' ')
+answer = ''
+for i in s:
+    answer += i[0]
+answer
 
 """# 65번
 
