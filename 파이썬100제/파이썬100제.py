@@ -357,51 +357,42 @@ for i in s:
 answer
 
 # 65번
-
-
-a = [1, 2,3, 4]
+a = [1, 2, 3, 4]
 b = ['a', 'b', 'c', 'd']
 
-count = 0
 answer = []
+count = 0
 for i, j in zip(a, b):
     count += 1
-    if count % 2 == 0:
-        answer.append([j, i])
-    else:
+    if count % 2 == 1:
         answer.append([i, j])
+    else:
+        answer.append([j, i])
 answer
 
 # 66번
-
-
-# 첫번째 풀이 (박재혁)
+## 정답1
 탑 = ["ABCDEF", "BCAD", "ADEFQRX", "BEDFG"]
 규칙 = "ABD"
-
 answer = []
-
-for t in 탑:
-    규칙인덱스 = [t.index(rule) for rule in 규칙 if rule in t]
+for i in 탑:
+    규칙인덱스 = [i.index(rule) for rule in 규칙 if rule in i]
     if 규칙인덱스 == sorted(규칙인덱스):
         answer.append('가능')
     else:
         answer.append('불가능')
+answer
 
-print(answer)
-
-# 두번째 풀이 (김태호)
+## 정답2
 input = ["ABCDEF", "BCAD", "ADEFQRX", "BEDFG"]
 rule = "ABD"
-
 rule = list(rule)
 result = list(map(lambda x: [x.find(r) for r in rule if x.find(r) != -1], input))
 list(map(lambda x: '가능' if all(x[i] < x[i+1] for i in range(len(x)-1)) else '불가능', result))
 
-# 쉬운풀이
+## 정답3
 string = ["ABCDEF", "BCAD", "ADEFQRX", "BEDFG"]
 rule = "ABD"
-
 def solution(s, rule):
     temp = 0
     for i in s: #i:'D', s:"ABCDEF"
@@ -410,8 +401,8 @@ def solution(s, rule):
                 return '불가능'
             temp = rule.index(i)
     return '가능'
-
 solution(string[3], rule)
+
 
 """# 67번
 
