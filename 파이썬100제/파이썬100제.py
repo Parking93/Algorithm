@@ -404,14 +404,7 @@ def solution(s, rule):
 solution(string[3], rule)
 
 
-"""# 67번
-
-
-"""
-
-# 2명 - [a,b] 1번
-# 3명 - [a, b], [a,c],[b,c] 3번
-# 조합 (2명이 들어가는 조합)
+# 67번
 
 from itertools import combinations
 
