@@ -433,9 +433,8 @@ combi = list(combinations(nums, 2))
 
 
 
-"""# 70번 (풀기)
+# 70번 (풀기)
 
-"""
 
 
 
